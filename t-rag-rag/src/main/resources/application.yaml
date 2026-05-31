@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    nacos:
+      serverAddr: 127.0.0.1:8848 #如果用的云上托管版本，输入可访问的Nacos Server地址即可
+      config:
+        file-extension: yaml
+      discovery:
+        server-addr: 127.0.0.1:8848
+        group: t-rag
+
+  config:
+    import:
+      - nacos:t-rag-rag?group=t-rag&refreshEnabled=true

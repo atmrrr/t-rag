@@ -1,0 +1,13 @@
+package com.mcp.tragcrm;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class TRagCrmApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
