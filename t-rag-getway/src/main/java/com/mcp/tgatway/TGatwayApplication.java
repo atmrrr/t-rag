@@ -22,7 +22,7 @@ public class TGatwayApplication {
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder){
 
         return builder.routes()
-                .route(r -> r.path("/user/login")
+                .route(r -> r.path("/user/*")
                         .uri("lb://t-rag-crm"))
                 .build();
 

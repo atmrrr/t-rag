@@ -10,8 +10,10 @@
 
     <modules>
         <module>t-rag-crm</module>
-        <module>t-gatway</module>
+        <module>t-rag-getway</module>
         <module>t-rag-rag</module>
+        <module>t-rag-common</module>
+        <module>t-rag-call</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -43,8 +45,6 @@
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
         </dependency>
 
-
-
     </dependencies>
 
 
@@ -74,6 +74,27 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-reactor-spring-boot3-starter</artifactId>
+                <version>1.45.0</version>
+            </dependency>
+
+            <!-- Sa-Token 整合 RedisTemplate -->
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-redis-template</artifactId>
+                <version>1.45.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
+                <version>4.4.0</version>
+            </dependency>
+
+
 
         </dependencies>
     </dependencyManagement>

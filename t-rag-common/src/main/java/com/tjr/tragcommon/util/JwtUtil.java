@@ -1,10 +1,14 @@
 package com.tjr.tragcommon.util;
 
+import com.tjr.tragcommon.config.JwtConfig;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
@@ -12,10 +16,12 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 
+@Slf4j
 @Component
 public class JwtUtil {
 
-    private static final String secrete = "oxZETUFaWrbtn2MKlW9qH5MjH8F8S3H8kM4ZCAEyLNw=";
+    @Autowired
+    private JwtConfig jwtConfig;
 
     public  String getToken(String userName, String orgId, String deptId, String role, List<String> promisees){
 
@@ -29,12 +35,12 @@ public class JwtUtil {
         map.put("promisees", promisees);
 
         return Jwts.builder()
-                .issuer("t-rag")
+                .issuer(jwtConfig.getIssuer())
                 .id(UUID.randomUUID().toString())
                 .issuedAt(Date.from(instant))
                 .expiration(Date.from(expire))
                 .claims(map)
-                .signWith(getKey(secrete))
+                .signWith(getKey(jwtConfig.getSecret()))
                 .compact();
 
     }
@@ -47,38 +53,21 @@ public class JwtUtil {
 
     }
 
-    private void validateToken(String token){
-
-    }
 
     private Claims parseToken(String token){
 
-        Jws<Claims> claimsJws = Jwts.parser()
-                .verifyWith(getKey(secrete))
-                .build()
-                .parseSignedClaims(token);
-        // Claims 是一个 json 映射包括传入的 claims、id、issuer 等信息都可以在这里获取到
-        return claimsJws.getPayload();
+        try {
+            Jws<Claims> claimsJws = Jwts.parser()
+                    .verifyWith(getKey(jwtConfig.getSecret()))
+                    .build()
+                    .parseSignedClaims(token);
+            // Claims 是一个 json 映射包括传入的 claims、id、issuer 等信息都可以在这里获取到
+            return claimsJws.getPayload();
+        }catch (Exception e){
+            log.error("token 解析失败：{}", e.getMessage());
+            throw e;
+        }
     }
 
-    public static void main(String[] args) {
-
-//        //生成密钥
-//        SecretKey key = Jwts.SIG.HS256.key().build();
-//        //使用 base64 编码
-//        String secret = Encoders.BASE64.encode(key.getEncoded());
-//        System.out.println(secret);
-
-        JwtUtil jwtUtil = new JwtUtil();
-//        String token = jwtUtil.getToken("小明", "0001", "0001", "admin", Collections.singletonList("admin"));
-//
-//        System.out.println(token);
-
-
-        String token = "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ0LXJhZyIsImp0aSI6ImNhYmIzM2I0LWEwZTItNGNhNi1iY2NiLWYxNjIxNmU1MTZmNyIsImlhdCI6MTc4MDIzMjg5MywiZXhwIjoxNzgwMjMyODk0LCJyb2xlIjoiYWRtaW4iLCJkZXB0SWQiOiIwMDAxIiwidXNlck5hbWUiOiLlsI_mmI4iLCJvcmdJZCI6IjAwMDEiLCJwcm9taXNlZXMiOlsiYWRtaW4iXX0.7Jqyjmu3sw5qPWeOte6s7fCIjk80Helt4Ikqsq4Q0xM";
-        Claims claims = jwtUtil.parseToken(token);
-        System.out.println(claims.get("userName"));
-
-    }
 
 }

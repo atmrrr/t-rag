@@ -3,11 +3,17 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/t-gatway/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/t-gatway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/t-rag-call/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/t-rag-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/t-rag-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/t-rag-crm/app/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/t-rag-crm/app/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/t-rag-crm/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/t-rag-crm/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/t-rag-crm/t-rag-crm-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/t-rag-crm/t-rag-crm-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/t-rag-getway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/t-rag-getway/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/t-rag-rag/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/t-rag-rag/src/main/resources" charset="UTF-8" />
   </component>
