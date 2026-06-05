@@ -1,6 +1,4 @@
 package com.mcp.tragcrm.controller;
-
-import cn.dev33.satoken.stp.StpUtil;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -11,7 +9,6 @@ public class AuthController {
     @PostMapping("/doLogin")
     public Object login(@RequestParam("usernName") String userName, @RequestParam("password")String password){
 
-        StpUtil.login(userName);
         return "ok";
     }
 
@@ -19,8 +16,7 @@ public class AuthController {
     @GetMapping("/getLoginId")
     public Object getLoginId(){
 
-        Object loginId = StpUtil.getLoginId();
-        return loginId;
+        return null;
     }
 
 
