@@ -7,9 +7,11 @@
         <artifactId>t-rag</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>t-rag-crm</artifactId>
-    <name>t-rag-crm</name>
-    <description>t-rag-crm</description>
+    <groupId>com.rag</groupId>
+    <artifactId>t-rag-system</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>t-rag-system</name>
+    <description>t-rag-system</description>
     <url/>
     <licenses>
         <license/>
@@ -29,7 +31,7 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
         <dependency>
@@ -37,7 +39,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
 
         <dependency>
             <groupId>com.tjr</groupId>

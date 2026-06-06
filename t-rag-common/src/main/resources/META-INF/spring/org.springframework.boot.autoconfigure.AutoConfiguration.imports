@@ -1,3 +1,3 @@
-com.tjr.tragcommon.config.JwtConfig
-com.tjr.tragcommon.util.JwtUtil
-com.tjr.tragcommon.config.GlobalExceptionHandler
+com.rag.common.config.JwtConfig
+com.rag.common.util.JwtUtil
+com.rag.common.config.GlobalExceptionHandler

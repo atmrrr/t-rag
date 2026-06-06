@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rag.crm.mapper.CrmRolePromiseMapper">
+
+    <resultMap id="BaseResultMap" type="com.rag.crm.pojo.CrmRolePromise">
+            <id property="id" column="id" />
+            <result property="function" column="function" />
+            <result property="orgId" column="org_id" />
+            <result property="deptId" column="dept_id" />
+            <result property="createUser" column="create_user" />
+            <result property="updateUser" column="update_user" />
+            <result property="uTime" column="u_time" />
+            <result property="cTime" column="c_time" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,function,org_id,dept_id,create_user,update_user,
+        u_time,c_time
+    </sql>
+</mapper>

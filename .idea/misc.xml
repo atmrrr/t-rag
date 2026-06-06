@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/t-rag-crm/app/pom.xml" />
         <option value="$PROJECT_DIR$/t-rag-crm/t-rag-crm-api/pom.xml" />
         <option value="$PROJECT_DIR$/t-rag-call/pom.xml" />
+        <option value="$PROJECT_DIR$/t-rag-system/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

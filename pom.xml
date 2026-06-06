@@ -14,6 +14,7 @@
         <module>t-rag-rag</module>
         <module>t-rag-common</module>
         <module>t-rag-call</module>
+        <module>t-rag-system</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -63,13 +64,6 @@
                 <version>4.4.0</version>
             </dependency>
 
-
-            <dependency>
-                <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-spring-boot4-starter</artifactId>
-                <version>3.5.15</version>
-            </dependency>
-
             <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
@@ -78,7 +72,7 @@
 
             <dependency>
                 <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-spring-boot4-starter</artifactId>
+                <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
                 <version>3.5.15</version>
             </dependency>
 
@@ -87,7 +81,6 @@
                 <artifactId>lombok</artifactId>
                 <version>1.18.46</version>
             </dependency>
-
 
         </dependencies>
     </dependencyManagement>
