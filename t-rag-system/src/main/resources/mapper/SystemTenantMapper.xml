@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rag.system.mapper.SystemTenantMapper">
+
+    <resultMap id="BaseResultMap" type="com.rag.system.pojo.SystemTenant">
+            <id property="id" column="id" />
+            <result property="tenantName" column="tenant_name" />
+            <result property="contact" column="contact" />
+            <result property="phone" column="phone" />
+            <result property="email" column="email" />
+            <result property="address" column="address" />
+            <result property="status" column="status" />
+            <result property="vipStep" column="vip_step" />
+            <result property="fileCapacity" column="file_capacity" />
+            <result property="createUser" column="create_user" />
+            <result property="updateUser" column="update_user" />
+            <result property="uTime" column="u_time" />
+            <result property="cTime" column="c_time" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,tenant_name,contact,phone,email,address,
+        status,vip_step,file_capacity,create_user,update_user,
+        u_time,c_time
+    </sql>
+</mapper>

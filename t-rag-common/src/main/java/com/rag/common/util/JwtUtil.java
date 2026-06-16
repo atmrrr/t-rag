@@ -6,6 +6,7 @@ import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -17,18 +18,18 @@ import java.util.*;
 
 @Slf4j
 @Component
+@RequiredArgsConstructor(onConstructor_ = @Autowired)
 public class JwtUtil {
 
-    @Autowired
-    private JwtConfig jwtConfig;
+    private final JwtConfig jwtConfig;
 
-    public  String getToken(String userName, String orgId, String deptId, String role, List<String> promisees){
+    public  String getToken(Long userId,Integer tenantId, Integer deptId, Integer role, List<String> promisees){
 
         Instant instant = Instant.now();
-        Instant expire = instant.plus(1L, ChronoUnit.SECONDS);
+        Instant expire = instant.plus(jwtConfig.getExpire(), ChronoUnit.SECONDS);
         Map<String, Object> map = new HashMap<>();
-        map.put("userName", userName);
-        map.put("orgId", orgId);
+        map.put("userId", userId);
+        map.put("tenantId", tenantId);
         map.put("deptId", deptId);
         map.put("role", role);
         map.put("promisees", promisees);
@@ -53,20 +54,16 @@ public class JwtUtil {
     }
 
 
-    private Claims parseToken(String token){
+    public Claims parseToken(String token){
 
-        try {
-            Jws<Claims> claimsJws = Jwts.parser()
-                    .verifyWith(getKey(jwtConfig.getSecret()))
-                    .build()
-                    .parseSignedClaims(token);
-            // Claims 是一个 json 映射包括传入的 claims、id、issuer 等信息都可以在这里获取到
-            return claimsJws.getPayload();
-        }catch (Exception e){
-            log.error("token 解析失败：{}", e.getMessage());
-            throw e;
-        }
+        Jws<Claims> claimsJws = Jwts.parser()
+                .verifyWith(getKey(jwtConfig.getSecret()))
+                .build()
+                .parseSignedClaims(token);
+        // Claims 是一个 json 映射包括传入的 claims、id、issuer 等信息都可以在这里获取到
+        return claimsJws.getPayload();
     }
+
 
 
 }

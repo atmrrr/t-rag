@@ -1,3 +1,4 @@
 com.rag.common.config.JwtConfig
 com.rag.common.util.JwtUtil
 com.rag.common.config.GlobalExceptionHandler
+com.rag.common.common.aop.CheckPromiseAspect

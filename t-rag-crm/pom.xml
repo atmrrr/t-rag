@@ -38,7 +38,6 @@
             <scope>test</scope>
         </dependency>
 
-
         <dependency>
             <groupId>com.tjr</groupId>
             <artifactId>t-rag-common</artifactId>
@@ -54,6 +53,11 @@
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
         </dependency>
 
         <!--nacos 配置中心-->

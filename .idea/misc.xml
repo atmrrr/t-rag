@@ -5,24 +5,8 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/t-rag-crm/pom.xml" />
-        <option value="$PROJECT_DIR$/t-gatway/pom.xml" />
-        <option value="$PROJECT_DIR$/t-rag-rag/pom.xml" />
-        <option value="$PROJECT_DIR$/t-rag-common/pom.xml" />
-        <option value="$PROJECT_DIR$/t-rag-crm/app/pom.xml" />
-        <option value="$PROJECT_DIR$/t-rag-crm/t-rag-crm-api/pom.xml" />
-        <option value="$PROJECT_DIR$/t-rag-call/pom.xml" />
-        <option value="$PROJECT_DIR$/t-rag-system/pom.xml" />
       </list>
     </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/t-rag-crm/app/pom.xml" />
-        <option value="$PROJECT_DIR$/t-rag-crm/t-rag-crm-api/pom.xml" />
-      </set>
-    </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/out" />
-  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="21" project-jdk-type="JavaSDK" />
 </project>

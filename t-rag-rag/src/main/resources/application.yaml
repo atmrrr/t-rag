@@ -11,3 +11,4 @@ spring:
   config:
     import:
       - nacos:t-rag-rag?group=t-rag&refreshEnabled=true
+      - nacos:t-rag-base?group=t-rag&refreshEnabled=true

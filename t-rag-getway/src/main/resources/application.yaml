@@ -7,7 +7,19 @@ spring:
       discovery:
         server-addr: 127.0.0.1:8848
         group: t-rag
-
+#
+    gateway:
+      server:
+        webflux:
+          globalcors:
+            cors-configurations:
+              '[/**]':
+                allowed-origins:
+                  - "*"
+                allowed-methods:
+                  - "*"
+                allowed-headers:
+                  - "*"
   config:
     import:
       - nacos:t-rag-getway?group=t-rag&refreshEnabled=true

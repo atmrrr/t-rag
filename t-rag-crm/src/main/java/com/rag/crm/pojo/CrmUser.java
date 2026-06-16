@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.util.Date;
+
+import io.swagger.v3.oas.models.security.SecurityScheme;
 import lombok.Data;
 
 /**
@@ -18,7 +20,7 @@ public class CrmUser {
      * 
      */
     @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
+    private Long id;
 
     /**
      * 登录用户名
@@ -41,20 +43,20 @@ public class CrmUser {
     /**
      * 系统角色，来自于字典
      */
-    @TableField(value = "role")
-    private String role;
+    @TableField(value = "role_id")
+    private  Integer roleId;
 
     /**
      * 租户 id
      */
-    @TableField(value = "org_id")
-    private String orgId;
+    @TableField(value = "tenant_id")
+    private Integer tenantId;
 
     /**
      * 部门 id
      */
     @TableField(value = "dept_id")
-    private String deptId;
+    private Integer deptId;
 
     /**
      * 创建人
@@ -91,9 +93,9 @@ public class CrmUser {
         sb.append(", name=").append(name);
         sb.append(", password=").append(password);
         sb.append(", tokens=").append(tokens);
-        sb.append(", role=").append(role);
-        sb.append(", orgId=").append(orgId);
-        sb.append(", deptId=").append(deptId);
+        sb.append(", roleId=").append(roleId);
+        sb.append(", tenantId=").append(tenantId);
+        sb.append(", deptCode=").append(deptId);
         sb.append(", createUser=").append(createUser);
         sb.append(", updateUser=").append(updateUser);
         sb.append(", uTime=").append(uTime);

@@ -22,4 +22,9 @@ public class BusinessException extends RuntimeException {
         super(responseCode.getMeg());
         this.code = responseCode.getCode();
     }
+    public BusinessException(ResponseCode responseCode, String message) {
+        super(message);
+        this.code = responseCode.getCode();
+    }
+
 }

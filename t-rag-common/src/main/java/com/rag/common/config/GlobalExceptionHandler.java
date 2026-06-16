@@ -15,13 +15,14 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(BusinessException.class)
     public BaseResponse<Void> handleBusinessException(BusinessException e){
 
+        e.printStackTrace();
         return ResultUtil.create(e.getCode(), e.getMessage(),null);
     }
 
 
     @ExceptionHandler(Exception.class)
     public BaseResponse<Void> handleException(Exception e){
-
+        e.printStackTrace();
         return ResultUtil.create(ResponseCode.SYSTEM_ERROR.getCode(), e.getMessage(),null);
     }
 
